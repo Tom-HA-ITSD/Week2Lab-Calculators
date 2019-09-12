@@ -16,10 +16,13 @@
             Age Calculator
         </h1>
         <div>
-            <form action="AgeCalc" method="post">
-                Current Age: <input type="text" name="age" value="${age}">
+            <form action="age" method="post">
+                Current Age: <input type="text" name="age"><br>
                 <input type="submit" value="Age next Birthday">
             </form>
+        </div>
+        <div>
+            ${nextAge}
         </div>
     </body>
 </html>
