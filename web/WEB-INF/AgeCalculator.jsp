@@ -24,5 +24,8 @@
         <div>
             ${nextAge}
         </div>
+        <div>
+            <a href="arithmetic">Arithmetic Calculator</a>
+        </div>
     </body>
 </html>
