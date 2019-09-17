@@ -47,10 +47,15 @@ public class AgeCalcServlet extends HttpServlet {
             throws ServletException, IOException {
         int age = 0;
         
+        if(request.getParameter("age").equals("") || request.getParameter("age") == null){
+            request.setAttribute("nextAge", "You must give you current age.");
+            getServletContext().getRequestDispatcher("/WEB-INF/AgeCalculator.jsp").forward(request, response);
+        }
+        
         try{
             age = Integer.parseInt(request.getParameter("age"));
         } catch(NumberFormatException e){
-            request.setAttribute("nextAge", "You must give you current age.");
+            request.setAttribute("nextAge", "You must enter a number.");
             getServletContext().getRequestDispatcher("/WEB-INF/AgeCalculator.jsp").forward(request, response);
         }
         
