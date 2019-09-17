@@ -64,29 +64,17 @@ public class ArithCalcServlet extends HttpServlet {
         
         if(process.equals("+")){
             result = first + second;
-            request.setAttribute("result", result);
-            request.setAttribute("first", first);
-            request.setAttribute("second", second);
-            getServletContext().getRequestDispatcher("/WEB-INF/ArithmeticCalculator.jsp").forward(request, response);
         } else if(process.equals("-")){
             result = first - second;
-            request.setAttribute("first", first);
-            request.setAttribute("second", second);
-            request.setAttribute("result", result);
-            getServletContext().getRequestDispatcher("/WEB-INF/ArithmeticCalculator.jsp").forward(request, response);
         } else if(process.equals("*")){
             result = first * second;
-            request.setAttribute("first", first);
-            request.setAttribute("second", second);
-            request.setAttribute("result", result);
-            getServletContext().getRequestDispatcher("/WEB-INF/ArithmeticCalculator.jsp").forward(request, response);
         } else{
             result = first % second;
-            request.setAttribute("first", first);
-            request.setAttribute("second", second);
-            request.setAttribute("result", result);
-            getServletContext().getRequestDispatcher("/WEB-INF/ArithmeticCalculator.jsp").forward(request, response);
         }
+        request.setAttribute("first", first);
+        request.setAttribute("second", second);
+        request.setAttribute("result", result);
+        getServletContext().getRequestDispatcher("/WEB-INF/ArithmeticCalculator.jsp").forward(request, response);
     }
 
     /**
